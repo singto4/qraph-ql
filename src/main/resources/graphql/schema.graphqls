@@ -1,0 +1,29 @@
+scalar BigDecimal
+scalar DateTime
+
+type Query {
+    allBooks: [Book]
+    findBookById(id: ID): Book
+    findBookByTitle(title: String): Book
+    findBookByCategory(category: String): [Book]
+}
+
+type Book {
+    id: ID!
+    title: String
+    rating: Rating
+    author: Author
+    category: String
+    price: BigDecimal
+    createDate: DateTime
+}
+
+type Rating {
+    star: String
+}
+
+type Author {
+    id: ID!
+    firstName: String
+    lastName: String
+}
